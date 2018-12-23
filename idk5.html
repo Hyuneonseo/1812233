@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8"/>
+	<script src="paper.js"></script>
+	<script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Heebo|Hind+Madurai|Hind+Siliguri|Nunito+Sans|Yantramanav" rel="stylesheet">
+	<title>땋은머리.번역투</title>
+	<style>
+		
+		a:link, a:active, a:visited{text-decoration: none; }
+        a:link, a:active, a:visited{color: black;}
+
+        #body {
+		   transform: scale(0.7);
+		   transform-origin: 0 1;
+		   // add prefixed versions too. 
+
+		}
+
+		::selection {
+ 			background: black; /* WebKit/Blink Browsers */
+		}
+
+		#footer{height: 70px; width: 100%; margin: auto; border: 1px solid black; display: block; position: fixed; bottom:0px; border-bottom: 0px; border-left: 0px; left: 0px; font-family: 'Noto Sans KR', sans-serif; overflow: hidden;}
+
+			#footer1{position: absolute; width: 145px; height: 70px; font-size: 2em; line-height: 1.2em; font-weight: 900; left: 10px; background-color: white;}
+			#footer1:hover{background-color: #1aff87; }
+			#footer5:hover{background-color: #1aff87; }
+
+			#footer2{position: absolute; width: 250px; height: 60px; font-size: 1em; line-height: 1.7em; font-weight: 700; left: 170px; top: 5px;}
+
+			#footer3{position: absolute; width: 360px; height: 8px; background-color: black; left: 435px; top: 22px; transform: rotate(2deg); animation: tik 0.7s infinite linear alternate-reverse;}
+			#footer4{position: absolute; width: 360px; height: 2px; background-color: black; left: 435px; top: 38px; transform: rotate(-2deg); animation: tak 0.7s infinite linear alternate-reverse;}
+			#footer5{position: absolute; width: 90px; height: 70px; font-size: 2em; font-weight: 700; left: 815px; line-height: 2em;}
+			a #footer5:hover{color: #f3ff00;}
+			#footer6{position: absolute; width: 360px; height: 2px; background-color: black; left: 922px; top: 20px; animation: tok 1.5s infinite linear alternate-reverse;}
+			#footer7{position: absolute; width: 400px; height: 50px; font-size: 0.7em; font-weight: 700; left: 1305px; top: 15px;}
+
+		.tophead{margin: auto; width: 1050px; height: 90px; border: 1px solid black; font-family: 'Noto Sans KR', sans-serif; margin-top: 33px;}
+		#tphd1{background: #f3ff00; float: right; width: 500px; height: 17px; font-weight:700; text-align: right; font-size: 0.8em; color: #f3ff00; border: 1px solid black; border-right: 0px; border-top: 0px; line-height: 1.2em;}
+		#tphd2{position: relative; top: 20px; border: 0px solid black; width: 300px; height: 70px; font-weight: 700; font-size: 2.73em; left: 65px; }
+		#tphd3{position: relative; top: -145px; left: 552px; border: 0px solid black; width: 500px; height: 100px; font-weight: 700; font-size: 2.6em; text-align: right; font-family: 'Noto Sans KR', sans-serif;}
+		#tphd4{position: relative; top: -50px; border: 0px solid black; width: 50px; height: 100px; font-weight: 700; font-size: 2.73em; left: 0px; animation: ting 0.7s infinite linear alternate-reverse; color: #00ff73; text-shadow: 2px 2px 10px black;}
+
+
+
+		.midcon{margin: auto; width: 1050px; height: 525px; border: 1px solid black; font-family:'Noto Sans KR', '맑은 고딕', '돋움'; overflow: hidden;}
+		#midcon1{margin: auto; width: 1050px; height: 8px; background: black;}
+		#midcon2{margin: auto; width: 1050px; height: 8px; background: black; top: 510px; position: relative; }
+		#midcon3{margin: auto; width: 8px; height: 510px; background: black; top: 0px; position: relative;}
+		#midcon4{position: relative; border: px solid red; width: 390px; height: 364px; top: -502px; left: 1px; text-align: left; font-size: 1.5em; font-weight: 700; line-height: 1.7em; overflow: auto; padding: 65px;}
+		#midcon4:hover{color: white;}
+		#midcon5{position: relative; background: black; width: 522px; height: 520px; top: -1012px; left: 529px; overflow: hidden;}
+		#midcon6{position: absolute; top: 0px; left: 0px; }
+		#midcon7{position: relative; overflow: hidden; width: 520px; height: 772px; display: none;}
+		#midcon7 img{width: 520px;}
+		#midmenu{position: absolute; width: 529px; height: 25px; border: 0px solid red; background: black; z-index: 999; overflow: hidden;}
+		#midmenu1{position: absolute; width: 100px; height: 25px; border: 0px solid red; font-size: 1.5em; font-weight: 700; line-height: 0.9em; color: white; cursor: pointer;}
+		#midmenu2{position: absolute; width: 80px; height: 25px; left: 100px; border: 0px solid red; font-size: 1.5em; font-weight: 700; line-height: 0.9em; color: white; cursor: pointer;}
+		#midmenu3{position: absolute; width: 50px; height: 25px; right: 8px; border: 0px solid red; font-size: 1.5em; font-weight: 700; line-height: 1em; color: white; cursor: pointer; text-align: right; top: -1px;}
+		#midmenu4{position: absolute; width: 200px; height: 25px; right: 57px; border: 0px solid red; font-size: 1.5em; font-weight: 700; line-height: 1em; color: #f3ff00; cursor: pointer; text-align: right; top: -1px;}
+		#midconback{position: absolute; background-color: black; display: none; }
+		#midcongif{position: absolute; left: 190px; top: 200px; display: none;}
+
+
+
+
+		.botind{margin: auto; width: 1050px; height: 105px; border: 1px solid black; font-family:'Noto Sans KR', '맑은 고딕', '돋움'; overflow: hidden; }
+		#botind1{width: 1500px; height: 2.5px; background: black; top: 11px; position: relative;}
+		#botind2{width: 1500px; height: 3px; background: black; top: 88px; position: relative;}
+		#botind3{position: relative; width: 120px; height: 45px; top: 23px; border: 1px solid black; font-weight: 700; font-size: 3em; line-height: 43px; background: white; border-left:0px;}
+		#botind3:hover{background: #848484;  }
+		#botind9:hover{background: #f3ff00;  }
+		#botind10:hover{background: #f3ff00;  }
+		#botind8:hover{background: #f3ff00;  }
+		#botind4{width: 80px; height: 80px; border: 1px solid black; float: right; position: relative; top: -135px; text-align: center; border-right: 0px;}
+		#botind5{width: 80px; height: 80px; border: 1px solid black; float: right; position: relative; top: -135px; text-align: center; border-right: 0px;}
+		#botind6{width: 80px; height: 80px; border: 1px solid black; float: right; position: relative; top: -135px; text-align: center; border-right: 0px;}
+		#botind7{width: 80px; height: 80px; border: 1px solid black; float: right; position: relative; top: -135px; text-align: center; border-right: 0px;}
+		#botind4 img,#botind5 img,#botind6 img,#botind7 img {height: 80px;}
+
+		#botind8{height:20px; position: relative; width: 190px; height: 50px; top: -120px; border: 1px solid black; font-weight: 900; font-size: 3em; line-height: 50px; background: white; left: 535px; font-family: 'Yantramanav', sans-serif; cursor: pointer; text-align: right;}
+		#botind8:hover{background: #f3ff00;}
+		#botind9{position: relative; width: 250px; height: 45px; top: -24px; left: 120px; border: 1px solid black; font-weight: 700; font-size: 3em; line-height: 43px; background: ;cursor: pointer;}
+		#botind10{position: relative; width: 100px; height: 45px; top: -71px; left: 371px; border: 1px solid black; font-weight: 700; font-size: 3em; line-height: 43px; background:; cursor: pointer;}	
+
+
+		.drag1,.drag2,.drag3{position: relative;
+			  top: -740px;
+			  left: 10px;
+			  width:2px;
+			  height:230px;
+			  border-radius: 50%;
+			  background: red;
+			  z-index:100000;
+			  margin-top:10px;
+			}
+		.drag1 img,.drag2 img,.drag3 img{width: 40px; height: 60px;}
+
+		@keyframes tik{
+			from{transform: rotateZ(2deg);} 
+			to{transform: rotateZ(-2deg);}
+		}
+		@keyframes tak{
+			0%{transform: rotateZ(-2deg);} 
+			50%{transform: rotateZ(1.7deg);}
+			100%{transform: rotateZ(2deg);}
+		}
+		@keyframes tok{
+			0%{transform: translateY(0px);} 
+			50%{transform: translateY(20px);}
+			100%{transform: translateY(30px);}
+		}
+		@keyframes ting{
+			0%{opacity: 0;} 
+			100%{opacity: 1;}
+		}		
+	</style>
+	</head>
+	<body>
+		
+		
+		<div class="tophead">
+			<div id="tphd1">
+				🐣:이 페이지는 소설 <동백꽃>을 영문으로 번역한 뒤 다시 한글로 번역한 지문이 실려있습니다.
+			</div>
+			<div id="tphd2">
+				 <a href="idk5.html" style="color: #1aff87; text-shadow: 2px 2px 10px #333333;">5</a> , <a href="idk6.html">6</a> , <a href="idk7.html">7</a> , <a href="idk8.html">8</a> >
+			</div>
+			<div id="tphd4"><a href="idk.html" style="color: #1aff87"><<</a></div>
+			<div id="tphd3">
+				번역투 문장
+			</div>
+		</div>	
+		<div class="midcon">
+			<div id="midmenu">
+				<div id="midmenu1">
+					원문보기,
+				</div>
+				<div id="midmenu2">
+					끄기
+				</div>
+				<div id="midmenu3">
+					끄기
+				</div>
+				<div id="midmenu4">
+					🖼️캔버스사용예시,
+				</div>
+			</div>
+			<div id="midcon1"></div>
+			<div id="midcon2"></div>
+			<div id="midcon3"></div>
+			<div id="midcon4">
+				<div id="midconback">
+					<img src="dongtext.png" style="width: 390px;">
+				</div>
+				<div id="midcongif">
+					<img src="gogo.gif">
+				</div>
+				점순은 쌈을 다시 <a href="dongtext.png">입었음에 틀림없다.</a> 기운을 차리<a href="dongtext.png">기 위해</a> 그런 일을 했을 거예요. 나는 왜 그 늙은 남자의 소녀가 성 안으로 들어가 나를 먹을 수 없다고 말하는지 모르겠다.<br><br>
+				4일전에 나는 <a href="dongtext.png">감자 케이스</a>에 아무런 문제가 없었다. 여자가 야채를 가지러 갈 때, 남쪽 울타리에서 뜨개질을 <a href="dongtext.png">하는 이유는 무엇인가?</a> 발소리를 듣고 돌아왔어요<br><br>
+				"야! 너 혼자 일하니?"
+				<a href="dongtext.png">그것은</a> 아슬아슬한 속임수<a href="dongtext.png">이다.</a>
+				어제까지만 해도 저와 제가 말을 잘 하지 못했으며, 서로를 <a href="dongtext.png">만났음에도 불구하고</a> 그렇게 정중<a href="dongtext.png">했던 것도 당연합니다.</a> 넌 그냥 개자식이야....<br><br>
+				"그럼 혼자 해?"
+				지금 내가 이렇게 말하고 있으니
+				"일 잘하세요?"
+				아니면
+				"한여름에, <a href="dongtext.png">당신은 이미</a> 울타리를 가지고 <a href="dongtext.png">있나요?</a>"
+				그들은 듣는 <a href="dongtext.png">것에 대한 두려움 때문에</a> 입을 다물기 위해 손을 사용합니다. 별로 재미있지는 않지만 날씨가 개었을 때, 나는 이 어린 소녀가 미쳤다고 생각했다.
+				
+			</div>
+			<div id="midcon5">
+				<div id="midcon7">
+					<img src="grid4.png">
+				</div>
+				
+				<div id="midcon6" >
+					<canvas id="myCanvas" style="width:520px; height:732px;"></canvas>
+				</div>	
+
+				<div class="drag1">
+		      	</div>
+		      	<div class="drag2">
+		      	</div>
+		      	<div class="drag3">
+		      	</div>		
+			</div>
+		</div>
+		<div class="botind">
+			<div id="botind1"></div>
+			<div id="botind2"></div>
+			<div id="botind3">재료 :</div>
+			<div id="botind9">그리드 켜기,</div>
+			<div id="botind10">끄기</div>
+
+			<div id="botind4">
+				<img src="interrobang.png">
+			</div>
+			<div id="botind5">
+				<img src="acclamation.png">
+			</div>
+			<div id="botind6">
+				<img src="conviction.png">
+			</div>
+			<div id="botind7">
+				<img src="authority.png">
+			</div>
+
+			<div id="botind8" onclick="takeScreenShot()">Snapshot</div>
+		</div>
+	
+	<div id="footer">
+			<div id="footer1"><a href="index.html" >:;</a> <a href="index.html" style="font-size: 0.5em; font-weight: 700; position: absolute; top: 0px; left: 30px; ">문장 부호와 어감</a></div>
+			<div id="footer2">
+				Design By. Hyun Eunseo. 2018.<br>dmstj1641@gmail.com
+			</div>
+			<div id="footer3"></div>
+			<div id="footer4"></div>
+			<div id="footer5"><a href="index.html" style="font-weight: 900; position: absolute; top: -5px;">:;</a> <a href="index.html" style=" position: absolute; left: 30px;">메인</a></div>
+			<div id="footer6"></div>
+			<div id="footer7">* 페이지 8(쉬어가기)에는 웹캠을 사용합니다. 권한을 허용한 뒤 이용해주세요.</div>
+		</div>
+		
+		
+	</body>
+	<script>
+
+		$(".drag1").draggable();
+		$(".drag2").draggable();
+		$(".drag3").draggable();
+		var takeScreenShot = function() {
+		    html2canvas(document.getElementById("midcon5"), {
+		        onrendered: function (canvas) {
+		            var tempcanvas=document.createElement('canvas');
+		            tempcanvas.width=745;
+		            tempcanvas.height=732;
+		            var context=tempcanvas.getContext('2d');
+		            context.drawImage(canvas,0,0,745,730,0,0,745,732);
+		            var link=document.createElement("a");
+		            link.href=tempcanvas.toDataURL('image/jpg');   //function blocks CORS
+		            link.download = 'screenshot.jpg';
+		            link.click();
+		        }
+		    });
+		}
+		midmenu1.onclick = function(){
+			document.getElementById("midconback").style.display = 'inline';		
+		}
+		midmenu2.onclick = function(){
+			document.getElementById("midconback").style.display = 'none';		
+		}
+		midmenu4.onclick = function(){
+			document.getElementById("midcongif").style.display = 'inline';		
+		}
+		midmenu3.onclick = function(){
+			document.getElementById("midcongif").style.display = 'none';		
+		}
+
+
+
+		botind9.onclick = function(){
+			document.getElementById("midcon7").style.display = 'inline';
+		}
+		botind10.onclick = function(){
+			document.getElementById("midcon7").style.display = 'none';
+		}
+	</script>
+	<script type="text/paperscript" canvas="myCanvas">
+			var values = {
+				paths: 50,
+				minPoints: 5,
+				maxPoints: 15,
+				minRadius: 30,
+				maxRadius: 90
+			};
+
+			var hitOptions = {
+				segments: true,
+				stroke: true,
+				fill: true,
+				tolerance: 5
+			};
+
+			createPaths();
+
+			function createPaths() {
+				var radiusDelta = values.maxRadius - values.minRadius;
+				var pointsDelta = values.maxPoints - values.minPoints;
+				for (var i = 0; i < values.paths; i++) {
+					var radius = values.minRadius + Math.random() * radiusDelta;
+					var points = values.minPoints + Math.floor(Math.random() * pointsDelta);
+					var path = createBlob(view.size * Point.random(), radius, points);
+					var lightness = (Math.random() - 0.5) * 0.4 + 0.4;
+					var hue = Math.random() * 360;
+					path.fillColor = 'white';
+					path.strokeColor = 'black';
+				};
+			}
+
+			function createBlob(center, maxRadius, points) {
+				var path = new Path();
+				path.closed = true;
+				for (var i = 0; i < points; i++) {
+					var delta = new Point({
+						length: (maxRadius * 0.5) + (Math.random() * maxRadius * 0.5),
+						angle: (360 / points) * i
+					});
+					path.add(center + delta);
+				}
+				path.smooth();
+				return path;
+			}
+
+			var segment, path;
+			var movePath = false;
+			function onMouseDown(event) {
+				segment = path = null;
+				var hitResult = project.hitTest(event.point, hitOptions);
+				if (!hitResult)
+					return;
+
+				if (event.modifiers.shift) {
+					if (hitResult.type == 'segment') {
+						hitResult.segment.remove();
+					};
+					return;
+				}
+
+				if (hitResult) {
+					path = hitResult.item;
+					if (hitResult.type == 'segment') {
+						segment = hitResult.segment;
+					} else if (hitResult.type == 'stroke') {
+						var location = hitResult.location;
+						segment = path.insert(location.index + 1, event.point);
+						path.smooth();
+					}
+				}
+				movePath = hitResult.type == 'fill';
+				if (movePath)
+					project.activeLayer.addChild(hitResult.item);
+			}
+
+			function onMouseMove(event) {
+				project.activeLayer.selected = false;
+				if (event.item)
+					event.item.selected = true;
+			}
+
+			function onMouseDrag(event) {
+				if (segment) {
+					segment.point += event.delta;
+					path.smooth();
+				} else if (path) {
+					path.position += event.delta;
+				}
+			}
+		</script>
+</html>
